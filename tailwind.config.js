@@ -5,13 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBrown: "#8C3D24",
-        "ethiopian-red": "#8c3a24",
-        "ethiopian-dark": "#26100A"
+        basecolor: '#1E293B',
+        customWhite: '#F8FAFC'
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         playfair: ['"Playfair Display"', "serif"],
+        poppins: ['Poppins','sans-serif'],
       },
     },
   },
