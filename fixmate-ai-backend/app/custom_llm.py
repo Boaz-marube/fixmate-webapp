@@ -28,6 +28,10 @@ class CustomHuggingFaceLLM(LLM):
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         stop = stop or self.stop_sequences
 
+        # ✅ Validate the incoming prompt BEFORE using it
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError("❌ Prompt must be a non-empty string")
+
         try:
             is_chat_model = any(
                 keyword in self.repo_id.lower()
@@ -38,7 +42,7 @@ class CustomHuggingFaceLLM(LLM):
                 response = self._client.chat_completion(
                     messages=[
                         {"role": "system", "content": get_system_prompt()},
-                        {"role": "user", "content": prompt}
+                        {"role": "user", "content": prompt.strip()}
                     ],
                     temperature=self.temperature,
                     max_tokens=self.max_new_tokens,
@@ -48,7 +52,7 @@ class CustomHuggingFaceLLM(LLM):
                 return response.choices[0].message["content"]
             else:
                 response = self._client.text_generation(
-                    prompt=prompt,
+                    prompt=prompt.strip(),
                     temperature=self.temperature,
                     max_new_tokens=self.max_new_tokens,
                     repetition_penalty=self.repetition_penalty,
