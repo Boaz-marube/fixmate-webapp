@@ -1,8 +1,8 @@
 mission: connect nairobians with verified tradespeople instantly. No more repair nightmares or scams.
 **Services for customers**
--FixNow 🚨:Emergency repairs(burst pipes,power cuts)
--FixProtect 🛡️: 7-day warantee(no extra fee)
--FixTips 🧰: DIY tutorials.
+-FixNow :Emergency repairs(burst pipes,power cuts)
+-FixProtect : 7-day warantee(no extra fee)
+-FixTips : DIY tutorials.
 **For Handymen**
 -30% income boost
 -M-Pesa payout
