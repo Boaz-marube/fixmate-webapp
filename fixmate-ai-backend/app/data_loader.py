@@ -11,7 +11,7 @@ DATA_PATH = os.path.join(BASE_DIR, "startup_data")
 
 def load_documents():
     try:
-        if not os.paths.exists(DATA_PATH):
+        if not os.path.exists(DATA_PATH):
             raise FileNotFoundError(
                 f"🚨Data path does not exist: {DATA_PATH}"
             )
